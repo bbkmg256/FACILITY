@@ -48,7 +48,7 @@ if [ $(whoami) == "root" ]; then
 
 	# Intalado de base xfce4
 	echo -e "[!] Instalando base de xfce4...\n"
-	sudo apt install -y xfdesktop4 xfwm4 xfce4-panel xfce4-settings xfce4-session thunar xfce4-power-manager xfce4-pulseaudio-plugin xfce4-appfinder
+	sudo apt install -y xfdesktop4 xfwm4 xfce4-panel xfce4-settings xfce4-session thunar xfce4-power-manager xfce4-pulseaudio-plugin
 	if [ $(echo $?) == 0 ]; then
 		echo -e "[V] Todo correcto!\n"
 	else
@@ -59,7 +59,7 @@ if [ $(whoami) == "root" ]; then
 
 	# Instalado de complementos utilies
 	echo -e "[!] Instalando complementos útiles...\n"
-	sudo apt install -y curl wget git zutty clamav ufw firefox-esr zsh linuxlogo network-manager network-manager-gnome pavucontrol pulseaudio neofetch gnome-themes-extra ntp htop
+	sudo apt install -y curl wget git zutty clamav ufw firefox-esr zsh linuxlogo network-manager network-manager-gnome pavucontrol pulseaudio neofetch gnome-themes-extra ntp htop rofi
 	if [ $(echo $?) == 0 ]; then
 		echo -e "[V] Todo correcto!\n"
 	else
