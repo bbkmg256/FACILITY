@@ -3,7 +3,7 @@
 # Instalador de base xfce4 desatendida + complementos
 
 # NOTA: Basicamente un sistema minimo con xfce4 y algunos que otros complementos
-# PD de NOTA.: Ya dije que sistema minimo con xfce4 y alguna que otra cosa.
+# PD de NOTA.: Ya dije que sistema minimo con xfce4 y alguna que otra cosa?
 
 # Chequea que las ejecuciones estén correctas...
 comprobar() {
