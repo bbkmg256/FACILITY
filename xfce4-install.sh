@@ -65,7 +65,7 @@ if [ $(whoami) == "root" ]; then
 	comprobar
 
 
-	# Instalacion de complementos utilies
+	# Instalacion de complementos utiles
 	val=1
 	while [ $val -le 1 ]
 	do
