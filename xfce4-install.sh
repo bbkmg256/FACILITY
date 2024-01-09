@@ -33,7 +33,7 @@ if [ $(whoami) == "root" ]; then
 	
 	# Modificacion de las lista de repos para aceptar paquete privativos
 	val=$(ls /etc/apt | grep sources.list.bak)
-	if [ $val = "" ]; then
+	if [ $val == "" ]; then
 		echo -e "[!] Modificando sources.list...\n"
 		sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 		sudo echo -e "deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware\ndeb http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware\ndeb-src http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware\ndeb http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
