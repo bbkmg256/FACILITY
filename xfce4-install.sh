@@ -75,7 +75,8 @@ if [ $(whoami) == "root" ]; then
 
 			sudo apt install -y curl wget git zutty clamav ufw\
 			firefox-esr zsh linuxlogo network-manager network-manager-gnome\
-			pavucontrol pulseaudio neofetch gnome-themes-extra ntp htop rofi xarchiver
+			pavucontrol pulseaudio neofetch gnome-themes-extra ntp htop\
+   			rofi xarchiver net-tools
 
 			comprobar
 			break
