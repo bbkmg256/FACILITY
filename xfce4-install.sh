@@ -69,7 +69,7 @@ if [ $(whoami) == "root" ]; then
 	val=1
 	while [ $val -le 1 ]
 	do
-		echo "[!] Desea instalar algunos complementos útiles? (S / N): "; read opc
+		echo -n "[!] Desea instalar algunos complementos útiles? (S / N): "; read opc
 		if [[ $opc == "S" || $opc == "s" ]]; then
 			echo -e "[!] Instalando complementos útiles...\n"
 
