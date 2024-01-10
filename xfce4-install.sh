@@ -60,7 +60,8 @@ if [ $(whoami) == "root" ]; then
 	echo -e "[!] Instalando base de xfce4...\n"
 
 	sudo apt install -y xfdesktop4 xfwm4 xfce4-panel xfce4-settings\
-	xfce4-session thunar xfce4-power-manager xfce4-pulseaudio-plugin xfce4-notifyd
+	xfce4-session thunar xfce4-power-manager xfce4-pulseaudio-plugin\
+ 	xfce4-notifyd xfce4-screenshooter
 
 	comprobar
 
