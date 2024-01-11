@@ -1,0 +1,23 @@
+#
+# Complementos:
+# (Puede agregar o quitar los que desee)
+#
+
+curl
+wget
+git
+clamav
+ufw
+firefox-esr
+zsh
+linuxlogo
+network-manager
+network-manager-gnome
+pavucontrol
+pulseaudio
+neofetch
+gnome-themes-extra
+ntp
+htop
+rofi
+xarchiver

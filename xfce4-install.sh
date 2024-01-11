@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Instalador de base xfce4 desatendida + complementos
-
-# NOTA: Por el momento esto está hardcodeado :(
-# pero funciona :)
-
 # Chequea que las ejecuciones estén correctas...
 comprobar() {
 	if [ $(echo $?) == 0 ]; then
@@ -27,59 +22,94 @@ if [ $(whoami) == "root" ]; then
 	echo "▪▐█·█▌██▌.▐███▌▐█▄▄▌▐█▌██▐█▌▐█▄▪▐█ ▐█▌·▐█ ▪▐▌▐█▌▐▌▐█▌▐▌▐█▄▄▌▐█•█▌"
 	echo "•▀▀ ▀▀▀▀▀ ·▀▀▀  ▀▀▀ ▀▀▀▀▀ █▪ ▀▀▀▀  ▀▀▀  ▀  ▀ .▀▀▀ .▀▀▀  ▀▀▀ .▀  ▀"
 
-	echo -e "- Bienvenido al instalador de base xfce4 desatendido + complementos...\n"
+	echo -e "- Bienvenido al instalador de base xfce4 mínimo + complementos...\n"
+	echo -e "- by bbkmg...\n"
 	sleep 3
 
+	# Variable xd
+	val=1
 	
-	# Modificacion de las lista de repos para aceptar paquete privativos
-	val=$(ls /etc/apt | grep sources.list.bak)
-	if [ $val == "" ]; then
-		echo -e "[!] Modificando sources.list...\n"
-		sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-		sudo echo -e "deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware\ndeb http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware\ndeb-src http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware\ndeb http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware\ndeb-src http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware" > /etc/apt/sources.list
-		comprobar
-	else
-		echo -e "[!] El fichero sources.list.bak ya existe, no se realizará ningun cambio...\n"
-		sleep 2
-	fi
+	# Modificación de las lista de repos para aceptar paquete privativos
+	while [ $val -le 1 ]
+	do
+		echo -n "[!] Desea modificar el fichero sources.list para paquetes privativos? (S / N): "; read opc
+
+		if [[ $opc == "S" || $opc == "s" ]]; then
+			if [ $(ls /etc/apt | grep sources.list.bak) == "" ]; then
+				echo -e "[!] Creando backup... \n"
+				sleep 1
+				sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+				echo -e "[!] Modificando sources.list...\n"
+				sleep 1
+				sudo cat ./src/deb-rep.txt &> /etc/apt/sources.list
+				comprobar
+			else
+				echo -e "[!] El fichero sources.list.bak ya existe, no se realizará ningun cambio...\n"
+			fi
+			sleep 2
+			break
+
+		elif [[ $opc == "N" || $opc == "n" ]]; then
+			echo -e "[!] Modificación de ficheros sources.list omitida...\n"
+			sleep 2
+			break
+		else
+			echo -e "[E] Opción no válida...\n"
+			sleep 2
+		fi
+	done
 
 
 	# Habilitación de paqueteria 32bits
-	echo -e "[!] Configurando arquitecturas 32 bits...\n"
-	sudo dpkg --add-architecture i386 &> /dev/null
-	comprobar
+	while [ $val -le 1 ]
+	do
+		echo -n "[!] Habilitar paquetes 32bits? (S / N): "; read opc
+
+		if [[ $opc == "S" || $opc == "s" ]]; then		
+			echo -e "[!] Configurando arquitecturas 32 bits...\n"
+			sudo dpkg --add-architecture i386 &> /dev/null
+			comprobar
+			sleep 2
+			break
+
+		elif [[ $opc == "N" || $opc == "n" ]]; then
+			echo -e "[!] Omitido...\n"
+			sleep 2
+			break
+
+		else
+			echo -e "[E] Opción no válida...\n"
+			sleep 2
+		fi
+	done
 
 
 	# Actualización de paqueteria
 	echo -e "[!] Actualizando lista de repositorios...\n"
 	sudo apt update
 	comprobar
+	sleep 2
 
 
 	# Intalación de base xfce4
 	echo -e "[!] Instalando base de xfce4...\n"
 
-	sudo apt install -y xfdesktop4 xfwm4 xfce4-panel xfce4-settings\
-	xfce4-session thunar xfce4-power-manager xfce4-pulseaudio-plugin\
- 	xfce4-notifyd xfce4-screenshooter
-
+	sudo apt install -y $(cat ./src/xbase.txt | grep -v "#")
 	comprobar
+	sleep 2
 
 
 	# Instalacion de complementos utiles
-	val=1
 	while [ $val -le 1 ]
 	do
 		echo -n "[!] Desea instalar algunos complementos útiles? (S / N): "; read opc
+
 		if [[ $opc == "S" || $opc == "s" ]]; then
 			echo -e "[!] Instalando complementos útiles...\n"
 
-			sudo apt install -y curl wget git zutty clamav ufw\
-			firefox-esr zsh linuxlogo network-manager network-manager-gnome\
-			pavucontrol pulseaudio neofetch gnome-themes-extra ntp htop\
-   			rofi xarchiver net-tools
-
+			sudo apt install -y $(cat ./src/compl.txt | grep -v "#")
 			comprobar
+			sleep 2
 			break
 
 		elif [[ $opc == "N" || $opc == "n" ]]; then
