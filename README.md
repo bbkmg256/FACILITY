@@ -9,7 +9,7 @@ Descripción:
   Este script automatiza una tarea tediosa, fin.
 
 Uso:
-  sudo chmod +x xfce4-install.sh
+  sudo chmod +x xfce4-install.sh\n
   sudo bash xfce4-install.sh
 
 NOTA:
