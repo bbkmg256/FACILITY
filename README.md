@@ -20,6 +20,4 @@ Uso:
 
 NOTA:
   
-  Puede modificar los complementos de instalación en
-  
-  los ficheros xbase.txt (base xfce4) y compl.txt (complementos utiles).
+  Puede modificar los complementos de instalación en los ficheros xbase.txt (base xfce4) y compl.txt (complementos utiles).
