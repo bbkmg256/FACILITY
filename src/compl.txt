@@ -21,3 +21,4 @@ ntp
 htop
 rofi
 xarchiver
+blueman
