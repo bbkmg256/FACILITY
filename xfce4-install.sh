@@ -35,7 +35,8 @@ if [ $(whoami) == "root" ]; then
 		echo -n "[!] Desea modificar el fichero sources.list para paquetes privativos? (S / N): "; read opc
 
 		if [[ $opc == "S" || $opc == "s" ]]; then
-			if [ $(ls /etc/apt | grep sources.list.bak) == "" ]; then
+			ls /etc/apt | grep sources.list.bak &> /dev/null
+			if [ $? == 1 ]; then
 				echo -e "[!] Creando backup... \n"
 				sleep 1
 				sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
@@ -65,7 +66,7 @@ if [ $(whoami) == "root" ]; then
 	do
 		echo -n "[!] Habilitar paquetes 32bits? (S / N): "; read opc
 
-		if [[ $opc == "S" || $opc == "s" ]]; then		
+		if [[ $opc == "S" || $opc == "s" ]]; then
 			echo -e "[!] Configurando arquitecturas 32 bits...\n"
 			sudo dpkg --add-architecture i386 &> /dev/null
 			comprobar
