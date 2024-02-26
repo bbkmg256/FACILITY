@@ -14,15 +14,13 @@ comprobar() {
 # INICIO
 if [ $(whoami) == "root" ]; then
 	clear
-
+	
+ 	echo -e "\n"
+	echo "▀▄▀ █▀▀ █▀▀ █▀▀ ▄▄ █ █▄░█ █▀ ▀█▀ ▄▀█ █░░ █░░ █▀▀ █▀█ █▀▀"
+	echo "█░█ █▀░ █▄▄ ██▄ ░░ █ █░▀█ ▄█ ░█░ █▀█ █▄▄ █▄▄ ██▄ █▀▄ ██▄"
 	echo -e "\n"
-	echo "▐▄• ▄ ·▄▄▄ ▄▄· ▄▄▄ .▪   ▐ ▄ .▄▄ · ▄▄▄▄▄ ▄▄▄· ▄▄▌  ▄▄▌  ▄▄▄ .▄▄▄  "
-	echo " █▌█▌▪▐▄▄·▐█ ▌▪▀▄.▀·██ •█▌▐█▐█ ▀. •██  ▐█ ▀█ ██•  ██•  ▀▄.▀·▀▄ █·"
-	echo " ·██· ██▪ ██ ▄▄▐▀▀▪▄▐█·▐█▐▐▌▄▀▀▀█▄ ▐█.▪▄█▀▀█ ██▪  ██▪  ▐▀▀▪▄▐▀▀▄ "
-	echo "▪▐█·█▌██▌.▐███▌▐█▄▄▌▐█▌██▐█▌▐█▄▪▐█ ▐█▌·▐█ ▪▐▌▐█▌▐▌▐█▌▐▌▐█▄▄▌▐█•█▌"
-	echo "•▀▀ ▀▀▀▀▀ ·▀▀▀  ▀▀▀ ▀▀▀▀▀ █▪ ▀▀▀▀  ▀▀▀  ▀  ▀ .▀▀▀ .▀▀▀  ▀▀▀ .▀  ▀"
-
-	echo -e "- Bienvenido al instalador de base xfce4 mínimo + complementos...\n"
+	
+ 	echo -e "- Bienvenido al instalador de base xfce4 mínimo + complementos...\n"
 	echo -e "- by bbkmg...\n"
 	sleep 3
 
