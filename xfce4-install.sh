@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Chequea que las ejecuciones estén correctas...
 comprobar() {
