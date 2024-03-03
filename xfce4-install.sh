@@ -30,7 +30,7 @@ if [ $(whoami) == "root" ]; then
 	# Modificación de las lista de repos para aceptar paquete privativos
 	while [ $val -le 1 ]
 	do
-		echo -n "[!] Desea modificar el fichero sources.list para paquetes privativos? (S / N): "; read opc
+		read -p "[!] Desea modificar el fichero sources.list para paquetes privativos? (S / N): " opc
 
 		if [[ $opc == "S" || $opc == "s" ]]; then
 			ls /etc/apt | grep sources.list.bak &> /dev/null
@@ -62,7 +62,7 @@ if [ $(whoami) == "root" ]; then
 	# Habilitación de paqueteria 32bits
 	while [ $val -le 1 ]
 	do
-		echo -n "[!] Habilitar paquetes 32bits? (S / N): "; read opc
+		read -p "[!] Habilitar paquetes 32bits? (S / N): " opc
 
 		if [[ $opc == "S" || $opc == "s" ]]; then
 			echo -e "[!] Configurando arquitecturas 32 bits...\n"
@@ -101,7 +101,7 @@ if [ $(whoami) == "root" ]; then
 	# Instalacion de complementos utiles
 	while [ $val -le 1 ]
 	do
-		echo -n "[!] Desea instalar algunos complementos útiles? (S / N): "; read opc
+		read -p "[!] Desea instalar algunos complementos útiles? (S / N): " opc
 
 		if [[ $opc == "S" || $opc == "s" ]]; then
 			echo -e "[!] Instalando complementos útiles...\n"
@@ -129,7 +129,6 @@ if [ $(whoami) == "root" ]; then
 
 else
 	echo -e "[E] Ejecute este script como super usuario porfavor.\n"
-	sleep 2
 	exit 1
 fi
 # FIN
