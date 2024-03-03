@@ -8,10 +8,9 @@
 
 # Uso:
 
+```bash: sudo chmod 700 xfce4-install.sh
 ```
-bash: sudo chmod 700 xfce4-install.sh
-
-bash: sudo bash xfce4-install.sh
+```bash: sudo bash xfce4-install.sh
 ```
 
 
