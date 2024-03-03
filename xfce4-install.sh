@@ -13,8 +13,10 @@ comprobar() {
 
 # INICIO
 if [ $(whoami) == "root" ]; then
-	clear
-	
+	# Limpieza de terminal...
+ 	clear
+
+ 	# Banner...
  	echo -e "\n"
 	echo "▀▄▀ █▀▀ █▀▀ █▀▀ ▄▄ █ █▄░█ █▀ ▀█▀ ▄▀█ █░░ █░░ █▀▀ █▀█ █▀▀"
 	echo "█░█ █▀░ █▄▄ ██▄ ░░ █ █░▀█ ▄█ ░█░ █▀█ █▄▄ █▄▄ ██▄ █▀▄ ██▄"
