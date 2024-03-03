@@ -1,6 +1,6 @@
 # Descripción:
   
-Automatiza una tareas tediosas, fin.
+Automatiza tareas tediosas al instalar Debian 12, fin.
 
 
 # Uso:
