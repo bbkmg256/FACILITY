@@ -7,7 +7,7 @@ Automatiza tareas tediosas al instalar Debian 12, fin.
 
 ```
 bash:
-sudo chmod 700 xfce4-install.sh
+sudo chmod u+x xfce4-install.sh
 sudo bash xfce4-install.sh
 ```
 
