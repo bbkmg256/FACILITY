@@ -11,8 +11,8 @@ Automatiza las siguientes tareas...
 
 ```
 bash:
-    sudo chmod u+x xfce4-install.sh
-    sudo bash xfce4-install.sh
+    sudo chmod u+x facility-script.sh
+    sudo bash facility-script.sh
 ```
 
 
