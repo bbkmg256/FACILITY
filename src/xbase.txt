@@ -12,3 +12,7 @@ xfce4-power-manager
 xfce4-pulseaudio-plugin
 xfce4-notifyd
 zutty
+network-manager
+network-manager-gnome
+pavucontrol
+pulseaudio
