@@ -25,6 +25,10 @@ AVISO="\e$AMARILLO !\e$NORMAL"
 ERROR="\e$ROJO E\e$NORMAL"
 CORRECTO="\e$VERDE V\e$NORMAL"
 
+# Rutas
+SRCL="/etc/apt/sources.list"
+NULL="/dev/null"
+
 
 # INICIO
 if [ $(whoami) == "root" ]; then
@@ -49,17 +53,18 @@ if [ $(whoami) == "root" ]; then
 	# Modificación de las lista de repos para aceptar paquete privativos
 	while [ 1 -le 1 ]
 	do
-		read -p " ! - Desea modificar el fichero sources.list para paquetes privativos? (S / N): " opc
+		read -p " ? - Desea modificar el fichero sources.list para paquetes privativos? (S / N): " opc
 
 		if [[ $opc == "S" || $opc == "s" ]]; then
-			ls /etc/apt | grep sources.list.bak &> /dev/null
+			ls /etc/apt | grep sources.list.bak &> $NULL
 			if [ $? == 1 ]; then
 				echo -e "$AVISO - Creando backup... \n"
 				sleep 1
-				sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+				sudo cp $SRCL $SRCL.bak
 				echo -e "$AVISO - Modificando sources.list...\n"
 				sleep 1
-				sudo cat ./src/deb-rep.txt &> /etc/apt/sources.list
+				sudo sed -i "s/main/main contrib non-free/g" $SRCL
+				#sudo cat ./src/deb-rep.txt &> /etc/apt/sources.list # obsoleto...
 				comprobar
 			else
 				echo -e "$AVISO - El fichero sources.list.bak ya existe, no se realizará ningun cambio...\n"
@@ -81,11 +86,11 @@ if [ $(whoami) == "root" ]; then
 	# Habilitación de paqueteria 32bits
 	while [ 1 -le 1 ]
 	do
-		read -p " ! - Habilitar paquetes 32bits? (S / N): " opc
+		read -p " ? - Habilitar paquetes 32bits? (S / N): " opc
 
 		if [[ $opc == "S" || $opc == "s" ]]; then
 			echo -e "$AVISO - Configurando arquitecturas 32 bits...\n"
-			sudo dpkg --add-architecture i386 &> /dev/null
+			sudo dpkg --add-architecture i386 &> $NULL
 			comprobar
 			sleep 2
 			break
@@ -120,7 +125,7 @@ if [ $(whoami) == "root" ]; then
 	# Instalacion de complementos utiles
 	while [ 1 -le 1 ]
 	do
-		read -p " ! - Desea instalar algunos complementos útiles? (S / N): " opc
+		read -p " ? - Desea instalar algunos complementos útiles? (S / N): " opc
 
 		if [[ $opc == "S" || $opc == "s" ]]; then
 			echo -e "$AVISO - Instalando complementos útiles...\n"
