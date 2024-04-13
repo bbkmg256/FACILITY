@@ -1,21 +1,6 @@
 # Descripción:
-  
-Automatiza las siguientes tareas...
-- Habilitación de repositorios privativos.
-- Habilitación de paquetes 32bits.
-- Instalación de interfaz (xfce4) mínima.
-- Instalación de complementos útiles.
-
-
-# Uso:
-
-```
-bash:
-    sudo chmod u+x facility-script.sh
-    sudo bash facility-script.sh
-```
-
+  Script varios para soluciones rápidas al realizar una instalación nueva y limpia de debian 12
 
 # NOTA:
-  
-Puede modificar los complementos de instalación en los ficheros xbase.txt (base xfce4) y compl.txt (complementos utiles).
+El fichero "init-install.sh" usar el directorio src, por lo que es aconsejable no mover los ficheros y simplemente ejecutarlos.
+Puede modificar los complementos de instalación en los ficheros xbase.txt (base xfce4) y compl.txt (complementos útiles).
