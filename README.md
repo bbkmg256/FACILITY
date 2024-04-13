@@ -1,5 +1,5 @@
 # Descripción:
-  Script varios para soluciones rápidas al realizar una instalación nueva y limpia de debian 12
+Script varios para soluciones rápidas al realizar una instalación nueva y limpia de debian 12
 
 # NOTA:
 El fichero "init-install.sh" usar el directorio src, por lo que es aconsejable no mover los ficheros y simplemente ejecutarlos.
