@@ -10,7 +10,7 @@ clamav
 ufw
 firefox-esr
 zsh
-linuxlogo
+# linuxlogo
 neofetch
 gnome-themes-extra
 ntp
