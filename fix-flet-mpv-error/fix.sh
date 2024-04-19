@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Solucion a problema:
+# Solucion al problema con flet:
 #	error while loading shared libraries: libmpv.so.1: cannot open shared object file: No such file or directory
 
 # vars.
