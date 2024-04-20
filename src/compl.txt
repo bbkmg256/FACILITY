@@ -18,3 +18,4 @@ htop
 rofi
 xarchiver
 blueman
+xfce4-screenshooter
