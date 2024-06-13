@@ -10,10 +10,8 @@ clamav
 ufw
 firefox-esr
 zsh
-# linuxlogo
-neofetch
+screenfetch
 gnome-themes-extra
-ntp
 htop
 rofi
 xarchiver
